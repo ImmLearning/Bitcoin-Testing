@@ -13,7 +13,7 @@ The pillars of the AWS Well-Architected Framework
 
 
 5.  
-Open terraform Folder
+Open main.tf
 
 6.
  How would you provision runtime parameters such as database connection strings, credentials into Docker containers so they can be used in different environments (development, staging, production)? Please take into account that parameters might change often as the development team adds new options or changes existing ones.
