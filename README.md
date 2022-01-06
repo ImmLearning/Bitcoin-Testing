@@ -1,6 +1,8 @@
-# Xapo
+# 1 Dockerfile
+# 2 ecs.tf
+# 3 Jenkinsfile.btc
 
-4.
+# 4.
 
 Currently, Amazon VPC supports five (5) IP address ranges, one (1) primary and four (4) secondary for IPv4. Each of these ranges can be between /28 (in CIDR notation) and /16 in size i.e The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). After you've created your VPC, you can associate secondary CIDR blocks with the VPC. For more information. The IP address ranges of your VPC should not overlap with the IP address ranges of your existing network.
 
@@ -12,10 +14,10 @@ Thus this would not satisfy the five pillars of AWS Well-Architected Framework.
 The pillars of the AWS Well-Architected Framework
 
 
-5.  
+# 5.  
 Open main.tf
 
-6.
+# 6.
  How would you provision runtime parameters such as database connection strings, credentials into Docker containers so they can be used in different environments (development, staging, production)? Please take into account that parameters might change often as the development team adds new options or changes existing ones.
 
 Usual method,
@@ -28,7 +30,7 @@ However ,
  If it need not be changed frequently then secret store or vault would come into picture. ( or read only volume , docker swarm / k8s secrets ,** using DOCKER_BUILDKIT & for aws creds
  aws-sdk-secretsmanager or directly assume role with time limits ) 
 
-7. 
+# 7. 
 Imagine you have an EC2 instance running in production and for some reason you and your team don't have access to the PEM key configured on it. What other options do you have to connect to that EC2 instance over SSH?
 
 Easiest ( non recommended )  create new user in EC2 machine and edit inside “sudo vi /etc/ssh/sshd_config “ , Change PasswordAuthentication "yes" to "no" Or login using password of newly created user instead of pem. ( little more secure )
